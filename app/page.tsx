@@ -95,11 +95,12 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-[#04182D] text-white">
-      <div className="grid min-h-screen lg:grid-cols-[280px_1fr]">
+      <div className="grid min-h-screen lg:grid-cols-[240px_minmax(0,1200px)_240px] justify-center">
         <aside className="border-r border-white/10 bg-[#061F3A] px-6 py-8">
-          <div className="mb-10 text-2xl font-black tracking-tight">
-            PREVIEW<span className="text-[#5ED1D1]">MYLOAN</span>
-          </div>
+          <div className="mb-10 text-xl font-black tracking-tight leading-none">
+  PREVIEW
+  <span className="text-[#5ED1D1]">MYLOAN</span>
+</div>
 
           <nav className="space-y-2">
             {navItems.map((item) => (
@@ -393,6 +394,45 @@ export default function Home() {
             </p>
           </div>
         </section>
+        <aside className="hidden lg:block border-l border-white/10 bg-[#061F3A] px-5 py-8">
+  <h2 className="text-lg font-bold text-white">
+    Planning Insights
+  </h2>
+
+  <div className="mt-6 space-y-4">
+
+    <div className="rounded-2xl bg-white/[0.06] p-4">
+      <p className="text-xs uppercase tracking-wider text-[#5ED1D1]">
+        Affordability
+      </p>
+      <p className="mt-2 text-xl font-bold text-white">
+        {affordability}
+      </p>
+    </div>
+
+    <div className="rounded-2xl bg-white/[0.06] p-4">
+      <p className="text-xs uppercase tracking-wider text-[#5ED1D1]">
+        Monthly Payment
+      </p>
+      <p className="mt-2 text-xl font-bold text-white">
+        ${monthlyPayment.toFixed(0)}
+      </p>
+    </div>
+
+    <div className="rounded-2xl bg-white/[0.06] p-4">
+      <p className="text-xs uppercase tracking-wider text-[#5ED1D1]">
+        Loan Term
+      </p>
+      <p className="mt-2 text-xl font-bold text-white">
+        {term} Months
+      </p>
+    </div>
+
+    <button className="w-full rounded-2xl bg-white py-3 font-bold text-[#04182D]">
+      Save Scenario
+    </button>
+  </div>
+</aside>
       </div>
     </main>
   );
